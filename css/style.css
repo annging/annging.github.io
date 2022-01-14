@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +428,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #383838;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
 }
 body td {
   padding: 0 8px;
@@ -459,8 +459,8 @@ body {
   color: #383838;
   font-display: swap;
   font-weight: 400;
-  font-size: 14px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -487,15 +487,18 @@ body {
   -webkit-hyphens: manual;
 }
 .content a {
-  color: #383838;
+  color: #3475e4;
   text-decoration: none;
+}
+.content a:hover {
+  color: #383838;
   background-image: linear-gradient(transparent, transparent 5px, #383838 5px, #383838);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
-.content a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
+.content a:visited {
+  color: #999;
 }
 .content a.icon {
   background: none;
@@ -581,9 +584,13 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 1.7rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+#header span {
+  font-size: 14px;
+  color: #666;
 }
 #header a {
   background: none;
@@ -594,6 +601,7 @@ body {
   display: inline-block;
   float: left;
   margin-right: 20px;
+  margin-bottom: 10px;
   width: 50px;
   height: 50px;
   border-radius: 5px;
@@ -603,11 +611,14 @@ body {
   -webkit-filter: grayscale(100%);
 }
 #header #nav {
-  color: #2bbc8a;
+  color: #8c8c8c;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
   font-size: 0.8rem;
+  clear: both;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
 }
 #header #nav ul {
   margin: 0;
@@ -617,7 +628,7 @@ body {
 }
 #header #nav ul a {
   margin-right: 15px;
-  color: #2bbc8a;
+  color: #8c8c8c;
 }
 #header #nav ul a:hover {
   background-image: linear-gradient(transparent, transparent 5px, #2bbc8a 5px, #2bbc8a);
@@ -628,7 +639,7 @@ body {
 #header #nav ul li {
   display: inline-block;
   margin-right: 15px;
-  border-right: 1px dotted;
+  line-height: 45px;
   border-color: #2bbc8a;
   vertical-align: middle;
 }
@@ -655,6 +666,9 @@ body {
   #header #title h1 {
     display: table-cell;
     vertical-align: middle;
+  }
+  #header #nav {
+    border: none;
   }
   #header #nav ul a:hover {
     background: none;
@@ -1038,7 +1052,6 @@ body {
 .post-list .post-item .meta {
   display: block;
   margin-right: 16px;
-  min-width: 100px;
   color: #666;
   font-size: 14px;
 }
@@ -1138,7 +1151,7 @@ article .content blockquote:before {
 article .content blockquote footer {
   margin: line-height 0;
   color: #666;
-  font-size: 11px;
+  font-size: 12px;
 }
 article .content blockquote footer a {
   background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666);
@@ -1203,6 +1216,9 @@ article .content .caption {
     content: "|";
   }
 }
+#archive .post-year {
+  list-style-type: none;
+}
 #archive .post-list {
   padding: 0;
 }
@@ -1213,10 +1229,10 @@ article .content .caption {
 }
 #archive .post-list .post-item .meta {
   display: block;
-  margin-right: 16px;
-  min-width: 100px;
+  margin-right: 8px;
   color: #666;
   font-size: 14px;
+  margin-top: 2px;
 }
 @media (min-width: 480px) {
   #archive .post-list .post-item {
@@ -1239,7 +1255,7 @@ article .content .caption {
   color: #666;
   vertical-align: top;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 #footer ul {
   margin: 0;
@@ -1385,8 +1401,8 @@ article .content .caption {
   color: #fff;
   font-display: swap;
   font-weight: 400;
-  font-size: 11.200000000000001px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-size: 12.8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1580,7 +1596,7 @@ code {
   margin: -5px 0 5px;
   color: #757575;
   font-size: 0.9em;
-  zoom: 1;
+  transform: scale(1);
 }
 .highlight figcaption a {
   float: right;
@@ -1630,4 +1646,8 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+.tagcloud a {
+  font-size: 16px !important;
+  margin: 0 10px 10px 0;
 }

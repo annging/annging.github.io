@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="我最近在项目中使用了grid，发现pisition:sticky似乎有时候会不起作用。让我们来看一下吧。 1.介绍我的主要代码是这样的： 1234&lt;div class&#x3D;&quot;wrapper&quot;&gt;  &lt;main&gt;&lt;&#x2F;main&gt;  &lt;aside&gt;&lt;&#x2F;aside&gt;&lt;&#x2F;div&gt; 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在CSS grid中使用position:sticky">
+<meta property="og:url" content="https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/index.html">
+<meta property="og:site_name" content="Ivy">
+<meta property="og:description" content="我最近在项目中使用了grid，发现pisition:sticky似乎有时候会不起作用。让我们来看一下吧。 1.介绍我的主要代码是这样的： 1234&lt;div class&#x3D;&quot;wrapper&quot;&gt;  &lt;main&gt;&lt;&#x2F;main&gt;  &lt;aside&gt;&lt;&#x2F;aside&gt;&lt;&#x2F;div&gt; 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-e3d57c47d3ba96184e30f5c824d490aa_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-602cf35e122b5a2ac5c521afad90399e_b.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-76b8f66c0be345b8efa374c161b05c8a_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-8f70ecb7d1b2607b84b8a7cfb71f0b40_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-8026044cacc0d2a80d586cefd1dfb936_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-cc56716b1bb83c621cebcb3aaa055cb2_b.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-042976cdb8fa5643fe36eeb19006b7b4_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-7d06100d4def94ee82dcf7c3eb08e14e_b.webp">
+<meta property="article:published_time" content="2022-01-14T08:01:17.162Z">
+<meta property="article:modified_time" content="2022-01-14T08:11:15.402Z">
+<meta property="article:author" content="Ivy">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-e3d57c47d3ba96184e30f5c824d490aa_720w.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>在CSS grid中使用position:sticky</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/archives/">文章</a></li>
+         
+          <li><a href="/blog/projects/">项目</a></li>
+         
+          <li><a href="/blog/tags/">标签</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇 " href="/blog/2021/05/13/bse/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部 " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&text=在CSS grid中使用position:sticky"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&is_video=false&description=在CSS grid中使用position:sticky"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在CSS grid中使用position:sticky&body=Check out this article: https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&name=在CSS grid中使用position:sticky&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&t=在CSS grid中使用position:sticky"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1.介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-align-items"><span class="toc-number">2.</span> <span class="toc-text">2.align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5"><span class="toc-number">3.</span> <span class="toc-text">3.其他情况</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        在CSS grid中使用position:sticky
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Ivy</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-01-14T08:01:17.162Z" itemprop="datePublished">01-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>我最近在项目中使用了grid，发现pisition:sticky似乎有时候会不起作用。<br>让我们来看一下吧。</p>
+<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>我的主要代码是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;main&gt;&lt;&#x2F;main&gt;</span><br><span class="line">  &lt;aside&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: minmax(10px, 1fr) 250px ;</span><br><span class="line">  grid-gap: 1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就创建了一个宽度250px的侧边栏，剩余内容为主题内容的布局，很简单。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-e3d57c47d3ba96184e30f5c824d490aa_720w.jpg" alt="a grid layout" title="a grid layout"><br>现在我要给侧边栏添加position: sticky;使其滚动到顶部后保持不动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">aside &#123;</span><br><span class="line">  position: sticky;</span><br><span class="line">  top: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是这样并没有达到我的预期：<br><img src="https://pic3.zhimg.com/v2-602cf35e122b5a2ac5c521afad90399e_b.webp" alt="a grid layout" title="a grid layout"><br>之所以会出现这种情况，是因为默认的align-items值为stretch。</p>
+<h3 id="2-align-items"><a href="#2-align-items" class="headerlink" title="2.align-items"></a>2.align-items</h3><p>接下来我们为侧边栏添加背景，可以看出侧边栏的高度是和主题内容的高度相同的。<br><img src="https://pic3.zhimg.com/80/v2-76b8f66c0be345b8efa374c161b05c8a_720w.jpg" alt="a grid layout" title="a grid layout"><br>这时align-items的默认行为strech，网格中的列将会被拉伸到高度等于所有列中最高的那一列。<br>看一个更加清晰的例子：<br><img src="https://pic1.zhimg.com/80/v2-8f70ecb7d1b2607b84b8a7cfb71f0b40_720w.jpg" alt="a grid layout" title="a grid layout"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.cards__list &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-columns: 1fr 1fr 1fr;</span><br><span class="line">    grid-gap: 1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个网格布局，默认情况下，所有的卡片高度相同。如果要覆盖这种行为，我们需要将align-items改为start。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.cards__list &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 1fr 1fr 1fr;</span><br><span class="line">  grid-gap: 1rem;</span><br><span class="line">  align-items: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic3.zhimg.com/80/v2-8026044cacc0d2a80d586cefd1dfb936_720w.jpg" alt="a grid layout" title="a grid layout"><br>回到我们刚开始的例子。我给侧边栏添加了一个显眼的背景，切换align-items的值，看看侧边栏的高度有什么变化。<br><img src="https://pic3.zhimg.com/v2-cc56716b1bb83c621cebcb3aaa055cb2_b.webp" alt="a grid layout" title="a grid layout"><br>为了使侧边栏具有黏性，我们可以给aside添加css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aside &#123;</span><br><span class="line">  align-self: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以在父容器上使用align-items，这将影响所有的子项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 250px minmax(10px, 1fr);</span><br><span class="line">  grid-gap: 1rem;</span><br><span class="line">  align-items: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两者都可以实现我们想要的效果。</p>
+<h3 id="3-其他情况"><a href="#3-其他情况" class="headerlink" title="3.其他情况"></a>3.其他情况</h3><p>不过有种情况，只能用在子项上来达到我们的预期。看下面这种布局。<br><img src="https://pic1.zhimg.com/80/v2-042976cdb8fa5643fe36eeb19006b7b4_720w.jpg" alt="a grid layout" title="a grid layout"><br>我们希望页面滚动的时候，section title只在相应的section滚动的时候滚动到顶部固定住。这个时候，只有使用align-self:start才可以实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.section &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 1fr;</span><br><span class="line">  grid-gap: 2rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.section__title &#123;</span><br><span class="line">  position: sticky;</span><br><span class="line">  top: 1rem;</span><br><span class="line">  align-self: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic3.zhimg.com/v2-7d06100d4def94ee82dcf7c3eb08e14e_b.webp" alt="a grid layout" title="a grid layout"></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/archives/">文章</a></li>
+         
+          <li><a href="/blog/projects/">项目</a></li>
+         
+          <li><a href="/blog/tags/">标签</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1.介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-align-items"><span class="toc-number">2.</span> <span class="toc-text">2.align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5"><span class="toc-number">3.</span> <span class="toc-text">3.其他情况</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&text=在CSS grid中使用position:sticky"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&is_video=false&description=在CSS grid中使用position:sticky"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在CSS grid中使用position:sticky&body=Check out this article: https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&title=在CSS grid中使用position:sticky"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&name=在CSS grid中使用position:sticky&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://annging.github.io/blog/2022/01/14/use-sticky-in-css-grid/&t=在CSS grid中使用position:sticky"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2022
+    Ivy🧡
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul style="display: none;">
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/archives/">文章</a></li>
+         
+          <li><a href="/blog/projects/">项目</a></li>
+         
+          <li><a href="/blog/tags/">标签</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
