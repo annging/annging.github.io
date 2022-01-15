@@ -333,19 +333,18 @@ body h2,
 body .h2 {
   position: relative;
   display: block;
-  margin-top: 2rem;
+  margin-top: 1.2rem;
   margin-bottom: 0.5rem;
   color: #383838;
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 body h3 {
   color: #383838;
-  text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 body h4,
 body h5,
@@ -354,13 +353,13 @@ body h6 {
   text-decoration: none;
   color: #8c8c8c;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 body h3,
 body h4,
 body h5,
 body h6 {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 body hr {
@@ -479,6 +478,8 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 .content code {
   hyphens: manual;
@@ -1090,8 +1091,6 @@ article header .meta * {
   font-size: 0.85rem;
 }
 article header .author {
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
   font-weight: 700;
 }
 article header .postdate {
