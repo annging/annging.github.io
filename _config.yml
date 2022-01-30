@@ -6,15 +6,15 @@
 title: "Ivy"
 subtitle: ''
 description: "web前端开发者"
-keywords:
+keywords: "前端开发 个人博客 ivy 技术 知识分享 阅读 web"
 author: Ivy
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://annging.github.io/blog
-root: /blog/
+url: https://annging.github.io/
+root: /
 permalink: :year:month:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -105,5 +105,11 @@ theme: cactus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:annging/blog.git
+  repo: git@github.com:annging/annging.github.io.git
   branch: gh-pages
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
