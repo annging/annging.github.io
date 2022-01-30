@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://annging.github.io/20220130/tomorrow-is-New-Year's-Eve/</loc>
+    
+    <lastmod>2022-01-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://annging.github.io/about/index.html</loc>
     
     <lastmod>2022-01-16</lastmod>
@@ -76,7 +85,7 @@
 
   <url>
     <loc>https://annging.github.io/</loc>
-    <lastmod>2022-01-16</lastmod>
+    <lastmod>2022-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,14 +93,21 @@
   
   <url>
     <loc>https://annging.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-01-16</lastmod>
+    <lastmod>2022-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2022-01-16</lastmod>
+    <lastmod>2022-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://annging.github.io/tags/%E5%86%99%E4%BD%9C/</loc>
+    <lastmod>2022-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
