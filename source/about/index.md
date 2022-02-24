@@ -10,6 +10,6 @@ date: 2020-11-19 16:33:06
 哦，我最近在找工作，找工作真是太难了。 (ง •̀_•́)ง
 
 ### 关于这个网站
-这个网站是用[hexo](https://hexo.io/zh-cn/)搭建的,主题[cactus](https://github.com/probberechts/hexo-theme-cactus),.我会在上面写我的阅读体验，编程技巧和日常感想。
+这个网站是用 [hexo](https://hexo.io/zh-cn/) 搭建的,主题 [cactus](https://github.com/probberechts/hexo-theme-cactus) 。我会在上面写我的阅读体验，编程技巧和日常感想。
 
 
