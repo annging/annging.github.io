@@ -1,10 +1,21 @@
-<section id="about">
-  <p>Hello, 我是 Ivy, 一个 web 前端设计与开发者。</p>
-  <h2>TODO:</h2>
-  <ul>
-    <li><a href="/20220212/to-find-a-job/">找工作</a></li>
-    <li><a href="/20220130/tomorrow-is-New-Year's-Eve/" style="text-decoration-line: line-through;">2022第一个月练习写作，写满一个本子</a></li>
-    <li>微信公众号运营到100个粉丝</li>
+<div id="archive">
+  <ul class="post-list">
+    <% var year = 0 %>
+    <% var change = false %>
+    <% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %>
+    <% page.posts.sort(field_sort, 'desc').each(function(post) { %>
+      <% var itemYear = date(post[field_sort], 'YYYY') - 0 %>
+      <% change = year !== itemYear %>
+      <% year = change ? itemYear : year %>
+      <% if (change) { %>
+        <li class="post-year"><h2><%= year %></h2></li>
+      <% } %>
+      <li class="post-item">
+        <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
+        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+      </li>
+    <% }); %>
   </ul>
-  <p>如果你想打招呼，欢迎<a href="/contact">联系</a>我。</p>
-</section>
+  <%- partial('_partial/pagination') %>
+</div>
+

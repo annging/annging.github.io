@@ -1,8 +1,8 @@
 article
   header
     .posttitle
-      margin-top: 0
-      margin-bottom: 0
+      margin-top: 0.5em
+      margin-bottom: 0.5em
       text-transform: none
       font-size: 1.5em
       line-height: 1.25
@@ -55,23 +55,27 @@ article
         height: 100%
 
     blockquote
-      margin: 1rem 10px
-      padding: .5em 10px
+      position: relative
+      margin: 1rem 0
+      padding: 1em 10px
       background: inherit
-      color: $color-quote
+      color: #818181
       quotes: "\201C" "\201D" "\2018" "\2019"
-      font-weight: bold
+      background-color: #FDFEFB;
+      border-left: 1px solid #D7D8C8
 
       p
         margin: 0
+        padding: 0 20px 0 50px
 
       &:before
+        position: absolute
         margin-right: .25em
-        color: $color-quote
-        content: "\201C"
+        content: ""
         vertical-align: -.4em
-        font-size: 2em
-        line-height: .1em
+        width: 24px;
+        height: 20px;
+        background-image: url(/images/q.svg)
 
       footer
         margin: line-height 0
