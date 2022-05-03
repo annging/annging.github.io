@@ -398,7 +398,7 @@ body abbr {
 body ul,
 body ol,
 body dl {
-  line-height: 1.725;
+  line-height: 1.5;
 }
 body ul ul,
 body ol ul,
@@ -417,7 +417,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   overflow: auto;
   display: block;
 }
@@ -426,7 +426,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #111;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
 }
 body td {
   padding: 0 8px;
@@ -452,14 +452,15 @@ html {
 body {
   margin: 0;
   height: 100%;
-  background-color: #f0f2fd;
+  background-color: #fbfaf7;
   color: #363533;
   font-display: swap;
   font-weight: 400;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  line-height: 1.725;
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
   flex: 1;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -631,7 +632,6 @@ body {
   #header #title {
     display: table;
     margin-right: 5rem;
-    min-height: 50px;
   }
   #header #title h1 {
     display: table-cell;
@@ -883,7 +883,7 @@ body {
   z-index: 5000000;
   width: 100%;
   border-top: 1px solid #666;
-  background: #e7eafc;
+  background: #f8f6f0;
   transition: opacity 0.2s;
 }
 #footer-post a {
@@ -900,7 +900,7 @@ body {
 #footer-post #nav-footer {
   padding-right: 1rem;
   padding-left: 1rem;
-  background: #c4ccf7;
+  background: #eae5d6;
   text-align: center;
 }
 #footer-post #nav-footer a {
@@ -944,7 +944,7 @@ body {
 #footer-post #share-footer {
   padding-right: 1rem;
   padding-left: 1rem;
-  background: #c4ccf7;
+  background: #eae5d6;
   text-align: center;
 }
 #footer-post #share-footer ul {
@@ -964,7 +964,7 @@ body {
   clear: both;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: #c4ccf7;
+  background: #eae5d6;
   text-align: left;
 }
 #footer-post #toc-footer ol {
@@ -1098,23 +1098,27 @@ article .content .video-container embed {
   height: 100%;
 }
 article .content blockquote {
-  margin: 1rem 10px;
-  padding: 0.5em 10px;
+  position: relative;
+  margin: 1rem 0;
+  padding: 1em 10px;
   background: inherit;
-  color: #ab2251;
+  color: #818181;
   quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
+  background-color: #fdfefb;
+  border-left: 1px solid #d7d8c8;
 }
 article .content blockquote p {
   margin: 0;
+  padding: 0 20px 0 50px;
 }
 article .content blockquote:before {
+  position: absolute;
   margin-right: 0.25em;
-  color: #ab2251;
-  content: "\201C";
+  content: "";
   vertical-align: -0.4em;
-  font-size: 2em;
-  line-height: 0.1em;
+  width: 24px;
+  height: 20px;
+  background-image: url("/images/q.svg");
 }
 article .content blockquote footer {
   margin: line-height 0;
@@ -1257,7 +1261,7 @@ article .content .caption {
   outline: none;
   border: solid 1px #666;
   border-radius: 5px;
-  background-color: #f0f2fd;
+  background-color: #fbfaf7;
   color: #363533;
   font-size: 1.2rem;
   -webkit-border-radius: 5px;
@@ -1317,12 +1321,12 @@ article .content .caption {
   display: none;
   padding: 0.2em 0.5em;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: #f0f2fd;
+  color: #fbfaf7;
   font-display: swap;
   font-weight: 400;
-  font-size: 12.8px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  line-height: 1.725;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   text-rendering: geometricPrecision;
   text-align: center;
   word-wrap: break-word;
@@ -1522,7 +1526,8 @@ code {
   margin: 1rem 0;
   padding: 10px 15px;
   border-radius: 4px;
-  background: #e7eafc;
+  background: #fdfefb;
+  border: 1px solid #d7d8c8;
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
 }
