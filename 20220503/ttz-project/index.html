@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="dash-ui  源码：https:&#x2F;&#x2F;github.com&#x2F;annging&#x2F;dash-ui Demo: https:&#x2F;&#x2F;annging.github.io&#x2F;dash-ui&#x2F;  Vue 2  Element UI 这是一个活动营销平台的管理系统。用于运营人员协助商家创建报名、投票、抽奖、团购等展示在小程序端的营销活动，管理商家、活动方案等数据。   主要包含下面这些功能点：  使用Mock.js拦">
+<meta property="og:type" content="article">
+<meta property="og:title" content="活动营销平台管理系统">
+<meta property="og:url" content="https://annging.github.io/20220503/ttz-project/index.html">
+<meta property="og:site_name" content="Ivy">
+<meta property="og:description" content="dash-ui  源码：https:&#x2F;&#x2F;github.com&#x2F;annging&#x2F;dash-ui Demo: https:&#x2F;&#x2F;annging.github.io&#x2F;dash-ui&#x2F;  Vue 2  Element UI 这是一个活动营销平台的管理系统。用于运营人员协助商家创建报名、投票、抽奖、团购等展示在小程序端的营销活动，管理商家、活动方案等数据。   主要包含下面这些功能点：  使用Mock.js拦">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-8eddec6bc38a0e604eefb6aa700160c3_1440w.png?source=d16d100b">
+<meta property="og:image" content="https://pica.zhimg.com/80/v2-9b197cb0e5d522493daf43c8f03ee819_1440w.png?source=d16d100b">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-9ee9fb9c82ea4d2da7e1dcacc08bd2f1_1440w.png?source=d16d100b">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-9ee9fb9c82ea4d2da7e1dcacc08bd2f1_1440w.png?source=d16d100b">
+<meta property="og:image" content="https://pica.zhimg.com/80/v2-d7e8bf8a4277093c5ac436f798148948_1440w.png?source=d16d100b">
+<meta property="article:published_time" content="2022-05-03T08:25:18.000Z">
+<meta property="article:modified_time" content="2022-05-03T10:30:22.954Z">
+<meta property="article:author" content="Ivy">
+<meta property="article:tag" content="Work">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-8eddec6bc38a0e604eefb6aa700160c3_1440w.png?source=d16d100b">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>活动营销平台管理系统</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT6MLY3V67"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FT6MLY3V67');
+  </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    <div class="content index py3">
+        <header id="header">
+  <h1 id="title"><a href="/">Ivy's blog</a></h1>
+  <small>web前端设计与开发</small>
+</header>
+<hr>
+
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        活动营销平台管理系统
+    </h1>
+
+
+
+    <div class="meta">
+      
+    <div class="postdate">
+      
+        <time datetime="2022-05-03T08:25:18.000Z" itemprop="datePublished">05/03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <a class="tag-link-link" href="/tags/Work/" rel="tag">Work</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>dash-ui</p>
+<ul>
+<li>源码：<a target="_blank" rel="noopener" href="https://github.com/annging/dash-ui">https://github.com/annging/dash-ui</a></li>
+<li>Demo: <a href="https://annging.github.io/dash-ui/">https://annging.github.io/dash-ui/</a></li>
+</ul>
+<p><code>Vue 2</code>  <code>Element UI</code></p>
+<p>这是一个活动营销平台的管理系统。用于运营人员协助商家创建报名、投票、抽奖、团购等展示在小程序端的营销活动，管理商家、活动方案等数据。  </p>
+<p>主要包含下面这些功能点：</p>
+<ul>
+<li>使用Mock.js拦截Ajax请求，返回随机数据，让前端独立于后端进行开发</li>
+<li>创建/编辑活动（报名、抽奖、海报、拼团、投票等）</li>
+<li>创建/编辑方案（平台针对不同会员等级定制的活动）</li>
+<li>活动可以设置自定义字段（单行文本/多行文本/单选/多选）</li>
+<li>活动详情展示包含文字/大图/小图/视频/标签，可单独删除、排序</li>
+<li>其他数据的管理(活动背景音乐，商家，商家门店，审核通知，商家学院文章和导师等等)</li>
+</ul>
+<figure>
+    <img src="https://pic2.zhimg.com/80/v2-8eddec6bc38a0e604eefb6aa700160c3_1440w.png?source=d16d100b"
+         alt="后台Dashboard">
+    <figcaption>后台Dashboard页面</figcaption>
+</figure>
+<figure>
+    <img src="https://pica.zhimg.com/80/v2-9b197cb0e5d522493daf43c8f03ee819_1440w.png?source=d16d100b"
+         alt="活动管理">
+    <figcaption>活动管理</figcaption>
+</figure>
+<figure>
+    <img src="https://pic1.zhimg.com/80/v2-9ee9fb9c82ea4d2da7e1dcacc08bd2f1_1440w.png?source=d16d100b"
+         alt="创建活动">
+    <figcaption>创建活动</figcaption>
+</figure>
+<figure>
+    <img src="https://pic1.zhimg.com/80/v2-9ee9fb9c82ea4d2da7e1dcacc08bd2f1_1440w.png?source=d16d100b"
+         alt="创建活动">
+    <figcaption>创建活动</figcaption>
+</figure>
+<figure>
+    <img src="https://pica.zhimg.com/80/v2-d7e8bf8a4277093c5ac436f798148948_1440w.png?source=d16d100b"
+         alt="创建活动">
+    <figcaption>自定义字段</figcaption>
+</figure>
+
+
+
+
+  </div>
+</article>
+<div id="gitalk-container"></div>
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '3b4e1bcccc9a1e0fac4c',
+  clientSecret: '43c1bc02630089fe712ea180395a54ba2eef2873',
+  repo: 'blog-comment',
+  owner: 'annging',
+  admin: ['annging'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+</script>
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://annging.github.io/20220503/ttz-project/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://annging.github.io/20220503/ttz-project/&text=活动营销平台管理系统"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://annging.github.io/20220503/ttz-project/&title=活动营销平台管理系统"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://annging.github.io/20220503/ttz-project/&is_video=false&description=活动营销平台管理系统"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=活动营销平台管理系统&body=Check out this article: https://annging.github.io/20220503/ttz-project/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://annging.github.io/20220503/ttz-project/&title=活动营销平台管理系统"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://annging.github.io/20220503/ttz-project/&title=活动营销平台管理系统"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://annging.github.io/20220503/ttz-project/&title=活动营销平台管理系统"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://annging.github.io/20220503/ttz-project/&title=活动营销平台管理系统"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://annging.github.io/20220503/ttz-project/&name=活动营销平台管理系统&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://annging.github.io/20220503/ttz-project/&t=活动营销平台管理系统"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <hr>
+  <div>
+    <nav role="navigation">
+      <a target="_blank" rel="noopener" href="https://twitter.com/ivyisgoood">Twitter</a>
+      <span>·</span>
+      <a target="_blank" rel="noopener" href="https://github.com/annging/">Github</a>
+    </nav>
+    <span>·</span>
+    <span class="copyright">Copyright &copy;
+    
+    
+    2021-2022
+    Ivy🧡</span>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+
+<!-- Disqus Comments -->
+
+   
+</body>
+</html>
