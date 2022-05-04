@@ -1077,7 +1077,7 @@ article .content h2:before {
 article .content img,
 article .content video {
   display: block;
-  margin: auto;
+  margin: 0.5rem auto;
   max-width: 100%;
   height: auto;
 }
@@ -1306,7 +1306,7 @@ article .content .caption {
 }
 #tag-cloud .tag-cloud-tags {
   clear: both;
-  text-align: center;
+  margin-left: -10px;
 }
 #tag-cloud .tag-cloud-tags a {
   display: inline-block;
@@ -1589,4 +1589,7 @@ code {
 .tagcloud a {
   font-size: 16px !important;
   margin: 0 10px 10px 0;
+}
+ul {
+  margin-top: 0px;
 }
