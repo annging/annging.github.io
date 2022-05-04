@@ -2,7 +2,8 @@
 title: 在CSS grid中使用position:sticky
 date: {{ date }}
 tags: 
-- 技术
+- CSS
+- Code
 ---
 我最近在项目中使用了grid，发现pisition:sticky似乎有时候会不起作用。
 让我们来看一下吧。
