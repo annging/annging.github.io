@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://annging.github.io/20220504/m815-project/</loc>
+    <loc>https://annging.github.io/20220430/to-find-a-job/</loc>
     
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://annging.github.io/20220519/step-forward/</loc>
+    
+    <lastmod>2022-05-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +21,15 @@
   
   <url>
     <loc>https://annging.github.io/projects/index.html</loc>
+    
+    <lastmod>2022-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://annging.github.io/20220504/m815-project/</loc>
     
     <lastmod>2022-05-04</lastmod>
     
@@ -39,15 +57,6 @@
   
   <url>
     <loc>https://annging.github.io/20220130/tomorrow-is-New-Year's-Eve/</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://annging.github.io/20220430/to-find-a-job/</loc>
     
     <lastmod>2022-05-03</lastmod>
     
@@ -94,7 +103,7 @@
 
   <url>
     <loc>https://annging.github.io/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,42 +111,42 @@
   
   <url>
     <loc>https://annging.github.io/tags/Career/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/Life/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/Writing/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/Work/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/CSS/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://annging.github.io/tags/Code/</loc>
-    <lastmod>2022-05-04</lastmod>
+    <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
